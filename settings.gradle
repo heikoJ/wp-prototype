@@ -1,0 +1,6 @@
+rootProject.name = 'main'
+include 'article-maintenance'
+include 'article-search'
+
+
+

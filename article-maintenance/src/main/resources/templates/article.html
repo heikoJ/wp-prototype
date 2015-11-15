@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Article</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js">
+            </script>
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'" />
+
+<div id="articleSearch"/>
+
+
+<script>
+
+    $(document).ajaxSend(function (event, request, settings) {
+        request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    });
+
+    $.get("http://localhost:8081/articleSearch", function(data) {
+        $("#articleSearch").replaceWith(data);
+    });
+</script>
+
+</body>
+</html>
